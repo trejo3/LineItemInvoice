@@ -69,7 +69,7 @@ public class InvoiceApp
 			System.out.println("");
 			
 			
-			newInvoice.getLineItem();
+			System.out.println(newInvoice.toString());
 			
 			System.out.println("");
 			System.out.println("===============");

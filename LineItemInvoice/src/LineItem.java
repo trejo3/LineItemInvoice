@@ -1,8 +1,8 @@
 public class LineItem 
 {
-	private int qty, invoiceNum;
-	private String itemDesc;
-	private double itemPrice;
+	protected int qty, invoiceNum;
+	protected String itemDesc;
+	protected double itemPrice;
 	
 	
 	public int getQty(){

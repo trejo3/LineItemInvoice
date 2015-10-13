@@ -1,6 +1,7 @@
 import java.util.Date;
 import java.util.ArrayList;
 
+
 public class Invoice 
 {
 	private String customerName;
@@ -84,12 +85,35 @@ public class Invoice
 		return (calculateSubtotal() + calculateTax(taxRate));
 	}
 	
+	
+	@Override
+	public String toString()
+	{
+		String LineItemOutput = "";
+		System.out.println("Item Desc      Price      Quantity");
+		System.out.println("");
+		
+		for(int i = 0; i < LineItems.size(); i++)
+		{
+			LineItemOutput += LineItems.get(i).getItemDesc() + "            ";
+			LineItemOutput += LineItems.get(i).getItemPrice() + "          ";
+			LineItemOutput += LineItems.get(i).getQty() + "\n";
+		}
+		
+		return LineItemOutput;
+	}
+	
+	
 	public void getLineItem()
 	{
 		for(int i = 0; i < LineItems.size(); i++)
 		{
-			System.out.println(LineItems.get(i));
+			System.out.println(LineItems.get(i).toString());
 		}
 	}
+	
+	
+	
+	
 
 }
