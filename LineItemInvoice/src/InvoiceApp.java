@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Date;
+import java.text.NumberFormat;
 
 public class InvoiceApp 
 {
@@ -73,15 +74,27 @@ public class InvoiceApp
 			
 			System.out.println("");
 			System.out.println("===============");
+			
+			subtotal = newInvoice.calculateSubtotal();
+			
+			NumberFormat currency = NumberFormat.getCurrencyInstance();
+			String subtotalC = currency.format(subtotal);
 		
-			System.out.println("Subtotal: " + newInvoice.calculateSubtotal());
+			System.out.println("Subtotal: " + subtotalC);
 		
 			System.out.println("Enter tax rate: ");
 			double taxRate = keyboard.nextDouble();
 		
-			System.out.println("Tax: "+ newInvoice.calculateTax(taxRate));
+			
+			tax = newInvoice.calculateTax(taxRate);
+			String taxC = currency.format(tax);
+			
+			System.out.println("Tax: "+ taxC);
 		
-			System.out.println("Grand Total: " + newInvoice.calculateGrandTotal(taxRate));
+			double grandTotal = newInvoice.calculateGrandTotal(taxRate);
+			String grandTotalC = currency.format(grandTotal);
+			
+			System.out.println("Grand Total: " + grandTotalC);
 		
 		}while (cont.equals("yes"));
 			
