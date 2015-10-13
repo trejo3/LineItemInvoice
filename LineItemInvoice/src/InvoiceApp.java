@@ -42,14 +42,22 @@ public class InvoiceApp
 				System.out.println("----------");
 				System.out.println(" ");
 					
-				System.out.println("Enter quantity:");
-				newQty = keyboard.nextInt();
+				int newQty = -1;
+				while(newQty < 0 || newQty > 50)
+				{
+					System.out.println("Enter quantity:");
+					newQty = keyboard.nextInt();
+				}
 				
 				System.out.println("Enter item description: ");
 				newItemDesc = keyboard.next();
 				
-				System.out.println("Enter unit price: ");
-				newItemPrice = keyboard.nextDouble();
+				double newItemPrice = -1.0;
+				while(newItemPrice < 0 || newItemPrice > 1000)
+				{
+					System.out.println("Enter unit price: ");
+					newItemPrice = keyboard.nextDouble();
+				}
 				
 				System.out.println("More items?: ");
 				cont = keyboard.next();
